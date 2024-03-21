@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-import "./style.css";
+import Login from './views/Login.vue';
+import './style.css';
 </script>
 
 <template>
-  <HelloWorld msg="Vite + Vue" />
+	<Login />
 </template>
