@@ -17,6 +17,11 @@
 				Please enter your details to join our Temporary family!
 			</h3>
 			<slot name="form"></slot>
+			<p class="text-center text-sm text-gray-400 my-6">
+				Don't have an account?
+				<a to="#" class="font-medium text-blue-600 cursor-pointer">Sign up </a>
+				for free
+			</p>
 		</div>
 	</div>
 </template>

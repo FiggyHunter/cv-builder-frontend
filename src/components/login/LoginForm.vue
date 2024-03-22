@@ -1,27 +1,17 @@
 <template #form>
 	<form @submit.prevent="handleLogin" class="w-full">
-		<LoginFormField label="Email" type="email" v-model="email" />
-		<LoginFormField label="Password" type="password" v-model="password" />
+		<InputField label="Email" type="email" v-model="email" />
+		<InputField label="Password" type="password" v-model="password" />
 		<LoginOptions v-model="rememberLogin" />
-		<button
-			type="submit"
-			class="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg w-full">
-			Sign in
-		</button>
+		<Button type="submit" text="Sign in" />
 	</form>
-	<div class="my-6">
-		<p class="text-center text-sm text-gray-400">
-			Don't have an account?
-			<RouterLink to="#" class="font-medium text-blue-600">Sign up </RouterLink>
-			for free
-		</p>
-	</div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import LoginFormField from './LoginFormField.vue';
 import LoginOptions from './LoginOptions.vue';
+import InputField from '../shared/InputField.vue';
+import Button from '../shared/Button.vue';
 
 defineProps({
 	slot: {
