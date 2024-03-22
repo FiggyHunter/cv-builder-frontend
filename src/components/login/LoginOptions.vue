@@ -1,12 +1,12 @@
 <template>
 	<div class="flex justify-between mb-6">
-		<div class="flex space-x-2">
+		<div class="flex">
 			<input
 				type="checkbox"
 				id="remember-login"
-				:checkboxValue="checkboxValue"
+				:checked="modelValue"
 				@change="updateValue" />
-			<label for="remember-login" class="text-gray-400"
+			<label for="remember-login" class="text-gray-400 ml-2"
 				>Remember account?</label
 			>
 		</div>
@@ -19,9 +19,9 @@
 <script setup lang="ts">
 const emit = defineEmits(['update:modelValue']);
 
-const props = defineProps({
-	checkboxValue: {
-		type: String,
+defineProps({
+	modelValue: {
+		type: Boolean,
 		required: true,
 	},
 });
