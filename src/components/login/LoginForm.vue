@@ -12,22 +12,14 @@ import { ref } from 'vue';
 import LoginOptions from './LoginOptions.vue';
 import InputField from '../shared/InputField.vue';
 import Button from '../shared/Button.vue';
+import auth from "../../api/auth/index";
 
-defineProps({
-	slot: {
-		type: String,
-		required: false,
-	},
-});
 
-const email = ref('');
-const password = ref('');
+const email = ref("");
+const password = ref("");
 const rememberLogin = ref(false);
 
 const handleLogin = () => {
-	console.log('click');
-	console.log(email.value);
-	console.log(password.value);
-	console.log(rememberLogin.value);
+  auth.loginUser({ email: email.value, password: password.value });
 };
 </script>
