@@ -1,11 +1,10 @@
 <template>
   <transition name="modal" appear>
-    <div
-      v-if="isOpen"
-      @click="closeModal"
-      class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50"
-    >
-      <div class="bg-white rounded-xl p-4 w-full my-6 lg:w-1/2 2xl:w-1/3">
+    <OverlayLayout :isOpen="isOpen" @overlay-click="closeModal">
+      <div
+        v-if="isOpen"
+        class="bg-white rounded-xl p-4 w-full my-6 mx-2 lg:w-1/2 2xl:w-1/3"
+      >
         <div class="flex justify-between items-center mb-4">
           <h2 class="text-3xl mb-1 text-blue-500 font-semibold">{{ title }}</h2>
           <button
@@ -19,11 +18,12 @@
           <slot></slot>
         </div>
       </div>
-    </div>
+    </OverlayLayout>
   </transition>
 </template>
 
 <script setup lang="ts">
+import OverlayLayout from "../../layouts/OverlayLayout.vue";
 defineProps({
   isOpen: {
     type: Boolean,
